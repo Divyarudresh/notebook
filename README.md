@@ -1,6 +1,6 @@
 # Notes App
 
-A simple and modern web application for managing notes, built with Python Flask and SQLite.
+A simple and modern web application for managing notes, built with Node.js, Express, and SQLite.
 
 ## Features
 
@@ -12,45 +12,49 @@ A simple and modern web application for managing notes, built with Python Flask 
 
 ## Prerequisites
 
-- Python 3.7 or higher
-- pip (Python package installer)
+- Node.js 16 or higher
+- npm (Node package manager)
 
 ## Installation
 
 1. Clone this repository or download the source code.
 
-2. Create a virtual environment (recommended):
+2. Install the required packages:
 ```bash
-python -m venv venv
-```
-
-3. Activate the virtual environment:
-- On Windows:
-```bash
-venv\Scripts\activate
-```
-- On macOS/Linux:
-```bash
-source venv/bin/activate
-```
-
-4. Install the required packages:
-```bash
-pip install -r requirements.txt
+npm install
 ```
 
 ## Running the Application
 
-1. Make sure your virtual environment is activated.
+### Development Mode
 
-2. Run the Flask application:
+1. Start the development server:
 ```bash
-python app.py
+npm run dev
+```
+
+2. Open your web browser and navigate to:
+```
+http://localhost:5173
+```
+
+The application will automatically reload when you make changes to the code.
+
+### Production Mode
+
+1. Build the application:
+```bash
+npm run build
+```
+
+2. Start the production server:
+```bash
+node server.js
 ```
 
 3. Open your web browser and navigate to:
 ```
-http://localhost:5000
+http://localhost:3001
 ```
 
 ## Usage
@@ -62,8 +66,17 @@ http://localhost:5000
 
 ## Technologies Used
 
-- Flask - Web framework
-- SQLAlchemy - Database ORM
-- SQLite - Database
+- Node.js - Runtime environment
+- Express - Web framework
+- SQLite3 - Database
+- Vite - Build tool and development server
 - Bootstrap 5 - Frontend framework
-- Bootstrap Icons - Icon library 
+- Bootstrap Icons - Icon library
+
+## API Endpoints
+
+- `GET /api/notes` - Get all notes
+- `GET /api/notes/:id` - Get a specific note
+- `POST /api/notes` - Create a new note
+- `PUT /api/notes/:id` - Update a note
+- `DELETE /api/notes/:id` - Delete a note
